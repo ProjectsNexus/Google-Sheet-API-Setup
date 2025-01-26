@@ -1,0 +1,338 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%;
+}
+
+.header {
+    background-color: #7b212b;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+}
+
+.store-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+}
+
+.action-item {
+    width: 120px;
+    margin: 10px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.action-item i {
+    color: black;
+}
+
+.action-item:hover {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.action-item p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.footer {
+    background-color: #800000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.line-dropdown {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    font-size: 16px;
+    padding: 5px 0;
+    width: 200px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+
+.line-dropdown:focus {
+    outline: none;
+    border-bottom: 1px solid #800000;
+}
+
+.action-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #660000;
+}
+
+.item-table {
+    width: 90%;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.scanned-item-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.scanned-item-fields-horizontal {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.line-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    font-size: 16px;
+    padding: 5px 0;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.line-input:focus {
+    outline: none;
+    border-bottom: 1px solid #800000;
+}
+
+.edit-button {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #660000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.modal .action-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal .action-button:hover {
+    background-color: #660000;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for iPad and larger screens */
+@media (min-width: 768px) {
+    .action-button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .line-dropdown {
+        font-size: 18px;
+        padding: 10px 0;
+        width: 250px;
+    }
+
+    .scanned-item-box {
+        width: 40%;
+    }
+
+    .modal-content {
+        width: 60%;
+        max-width: 600px;
+    }
+
+    .header {
+        padding: 30px 0;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .info-details p {
+        font-size: 18px;
+    }
+}
+
+/* New styles for location tables and selected items */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.location-table, .selected-items {
+    flex: 1;
+    min-width: 300px;
+    max-width: 48%;
+    box-sizing: border-box;
+}
+
+.selected-items {
+    margin-top: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.selected-items ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.selected-items li {
+    margin: 5px 0;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark {
+    background-color: #000000;
+    color: #ffffff;
+}
